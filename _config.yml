@@ -29,7 +29,8 @@ github_username:  missingchildrenmn
 permalink: /:year/:month/:day/:title/
 
 # Build settings
-theme: minima
+#theme: minima
+remote_theme: aterenin/minima-reboot
 plugins:
   - jekyll-feed
 
