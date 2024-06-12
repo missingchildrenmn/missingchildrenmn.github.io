@@ -17,4 +17,4 @@ In addition to search assistance, we also provide four critically acclaimed educ
 
 We hope that by providing children with the information they need to be safer this year, we will have fewer missing children next year.
 
-Please browse through our site to learn more about personal safety for children and teens. We always love to speak with kids and parents, so call or email us with your comments and questions!
+Please browse through our site to learn more about personal safety for children and teens. We always love to speak with kids and parents, so [call or email us](/contact) with your comments and questions!
