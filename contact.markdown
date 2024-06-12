@@ -6,6 +6,7 @@ permalink: /contact/
 
 ![](/assets/contact-banner.jpg)
 
+
 Missing Children Minnesota
 P.O. Box 1111
 Minnetonka, MN 55345
