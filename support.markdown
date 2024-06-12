@@ -28,7 +28,7 @@ Many companies offer paid time off for their employees to volunteer, or even don
 
 Missing Children Minnesota is a non-profit organization. As such, we are always in need of donations — both monetary and in-kind. As an all-volunteer organization, we keep our overhead costs low and make the most of every dollar as we pursue our mission and work.
 
-Gifts can be mailed to us at [our business address](contact).
+Gifts can be mailed to us at [our business address](/contact).
 
 There are also a number of ways that you can donate online:
 
@@ -42,7 +42,7 @@ Missing Children Minnesota is available as an option for many workplace giving p
 
 ### Interact on social media
 
-Follow our content and join in the discussion on our [social media sites](contact).
+Follow our content and join in the discussion on our [social media sites](/contact).
 
 SHARE the stories of the missing, and make them public on your page. Public awareness campaigns have helped find thousands of children across the country.
 

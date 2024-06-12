@@ -26,4 +26,4 @@ General.Info@missingchildrenmn.com
 
 ## Resources
 
-For more helpful information, links and phone numbers please visit our [resources page](resources) or our [blog](blog).
+For more helpful information, links and phone numbers please visit our [resources page](/resources) or our [blog](/blog).
