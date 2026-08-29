@@ -36,11 +36,30 @@ plugins:
 
 
 # Exclude from processing.
-# Items listed here are ADDED to Jekyll's internal default list (which already
-# covers Gemfile, Gemfile.lock, vendor/, node_modules/, etc.) -- this does not
-# replace those defaults.
 #
-# Repo-only files must be listed here or Jekyll publishes them to the live site:
-# a root-level .md file otherwise becomes a public page.
+# IMPORTANT: this list REPLACES Jekyll's built-in defaults, it does not add to
+# them. (The stock Jekyll scaffold comment claims otherwise; that was true of an
+# older Jekyll and is not true of the 3.x line GitHub Pages builds with.) So the
+# default entries below must be repeated verbatim -- deleting one starts
+# publishing that file. Verify with a build: anything left out shows up in
+# _site/ and therefore on the live site.
+#
+# Repo-only files must be listed here or Jekyll publishes them: a root-level
+# .md file otherwise becomes a public page.
 exclude:
+  # repo-only, not part of the site
   - CLAUDE.md
+  # the github-pages gem excludes this by default; GitHub Pages manages the
+  # custom domain from the repo-root CNAME + repo settings, not from _site/
+  - CNAME
+  # Jekyll's own defaults, restated because this list overrides them
+  - Gemfile
+  - Gemfile.lock
+  - gemfiles
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache
+  - .jekyll-cache
