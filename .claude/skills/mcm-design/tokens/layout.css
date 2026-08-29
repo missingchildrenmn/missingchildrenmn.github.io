@@ -1,0 +1,11 @@
+:root{
+  --container-max:1140px;   /* Bootstrap 4.6 .container at xl */
+  --container-pad:15px;
+  --nav-height:3.5rem;      /* site #nav-container and app .top-row */
+  --sidebar-width:250px;    /* app sidebar */
+  --nav-collapse:768px;     /* site responsive nav cutoff */
+  --app-split-pane:641px;   /* app sidebar/stacked cutoff */
+  --banner-ratio:1536/345; /* @kind other */
+  --transition-fast:.2s; /* @kind other */
+  --easing:ease; /* @kind other */
+}

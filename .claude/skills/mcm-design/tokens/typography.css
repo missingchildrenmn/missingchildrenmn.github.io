@@ -1,0 +1,40 @@
+:root{
+  /* Site (Jekyll + Bootstrap 4.6 Reboot) — no webfont is loaded; system stack */
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  /* App (KidsIdKit) — custom.scss sets Helvetica Neue; Open Sans ships with the MAUI app */
+  --font-ui:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* Display / brand voice — SUBSTITUTE for the logo wordmark's geometric sans */
+  --font-display:"Jost","Century Gothic",var(--font-sans);
+  --font-mono:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+
+  --font-body:var(--font-sans);
+
+  /* Bootstrap heading scale, as rendered on the site */
+  --text-h1:2.5rem;
+  --text-h2:2rem;
+  --text-h3:1.75rem;
+  --text-h4:1.5rem;
+  --text-h5:1.25rem;
+  --text-h6:1rem;
+  --text-base:1rem;
+  --text-sm:.875rem;
+  --text-xs:.8rem;
+  --text-lead:1.25rem;
+  --text-touch-link:18px;   /* app: vertically spaced list links */
+  --text-nav-item:.9rem;    /* app sidebar item */
+  --text-brand:1.1rem;      /* app navbar-brand */
+
+  --leading-tight:1.2;
+  --leading-heading:1.25;
+  --leading-body:1.5;
+  --leading-loose:1.7;
+
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+
+  --tracking-tight:-.01em;
+  --tracking-normal:0;
+  --tracking-caps:.06em;    /* MCM section headings are set in caps */
+}

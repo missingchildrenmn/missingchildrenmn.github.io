@@ -61,6 +61,16 @@ by Pages natively.
 - Markdown is kramdown: a trailing `\` forces a line break (used in the address
   and phone blocks on `contact.markdown`).
 
+## Design work
+
+`.claude/skills/mcm-design/` is a committed, project-scoped skill holding the
+MCM and KidsIdKit brand: palette, type, logos, banner imagery, and a UI kit.
+Use it for anything visual — new page styling, mockups, graphics — instead of
+inventing colors or pulling a logo from the live site. It is checked in
+deliberately so it travels with the repo; Jekyll never publishes it (see the
+exclude note in `_config.yml`). Its `assets/imagery/` duplicates the banners in
+`/assets/`; `/assets/` remains the source of truth for what the site serves.
+
 ## Content care
 
 The site carries emergency guidance for families of missing children plus the

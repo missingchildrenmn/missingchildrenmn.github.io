@@ -4,3 +4,7 @@ _site
 .jekyll-metadata
 vendor
 Gemfile.lock
+
+# Per-machine Claude Code state. The rest of .claude/ (the mcm-design skill) is
+# committed on purpose so it travels with the repo.
+.claude/settings.local.json

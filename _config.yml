@@ -46,6 +46,11 @@ plugins:
 #
 # Repo-only files must be listed here or Jekyll publishes them: a root-level
 # .md file otherwise becomes a public page.
+#
+# The exception is anything whose name starts with "." or "_": Jekyll filters
+# those out before this list is even consulted, and only an explicit `include:`
+# key (which this site does not set) can bring one back. That is why .claude/
+# and .github/ need no entry below -- adding one would be harmless but is noise.
 exclude:
   # repo-only, not part of the site
   - CLAUDE.md

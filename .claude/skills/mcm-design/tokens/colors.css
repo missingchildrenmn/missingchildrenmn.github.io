@@ -1,0 +1,88 @@
+/* Base palette — verbatim from missingchildrenmn/KidsIdKit docs/colors.md */
+:root{
+  --mcm-dark-teal-1:#084150;
+  --mcm-dark-teal-2:#245e6b;
+  --mcm-dark-teal-3:#437985;
+  --mcm-dark-teal-4:#437985; /* source file repeats -3; kept verbatim */
+
+  --mcm-light-blue-1:#46b6bc;
+  --mcm-light-blue-2:#64c4ca;
+  --mcm-light-blue-3:#7cd0d3;
+  --mcm-light-blue-4:#94d9da;
+
+  --mcm-orange-1:#df8319;
+  --mcm-orange-2:#e59c36;
+  --mcm-orange-3:#e9ad52;
+  --mcm-orange-4:#f0bc70;
+
+  --mcm-green-1:#31812e;
+  --mcm-green-2:#4e9a4a;
+  --mcm-green-3:#69ac67;
+  --mcm-green-4:#84bc82;
+
+  --mcm-black-1:#212121;
+  --mcm-black-2:#404040;
+  --mcm-black-3:#5e5e5e;
+  --mcm-black-4:#797979;
+
+  --mcm-yellow-1:#ede493;
+  --mcm-yellow-2:#f1e9a6;
+  --mcm-yellow-3:#f2ecb5;
+  --mcm-yellow-4:#f6efc5;
+
+  /* App theme colors declared in KidsIdKit scss/custom.scss */
+  --mcm-primary:#145c6c;
+  --mcm-secondary:#70af6d;
+
+  /* Neutral ramp — Bootstrap grays used by both the site (Bootstrap 4.6) and the app */
+  --white:#ffffff;
+  --gray-100:#f8f9fa;
+  --gray-200:#e9ecef;
+  --gray-300:#dee2e6;
+  --gray-400:#ced4da;
+  --gray-500:#adb5bd;
+  --gray-600:#6c757d;
+  --gray-700:#495057;
+  --gray-800:#343a40;
+  --gray-900:#212529;
+
+  /* Semantic aliases — use these in product work */
+  --brand-primary:var(--mcm-primary);
+  --brand-primary-deep:var(--mcm-dark-teal-1);
+  --brand-primary-mid:var(--mcm-dark-teal-2);
+  --brand-accent:var(--mcm-light-blue-1);
+  --brand-accent-soft:var(--mcm-light-blue-4);
+  --brand-support:var(--mcm-secondary);
+
+  --page-bg:#fdfdfd;              /* minima-reboot $layout-color-background */
+  --surface-card:var(--white);
+  --surface-sunken:var(--gray-100);
+  --surface-brand:var(--mcm-primary);
+  --surface-brand-deep:var(--mcm-dark-teal-1);
+  --surface-note:var(--mcm-yellow-4);
+
+  --text-body:var(--gray-900);
+  --text-heading:var(--mcm-black-1);
+  --text-muted:var(--gray-600);
+  --text-on-brand:var(--white);
+  --text-nav-inactive:#d7d7d7;    /* app sidebar link color */
+
+  --border-subtle:var(--gray-200);
+  --border-strong:var(--mcm-black-1);
+  --border-input:#ddd;            /* PinEntry.razor.css */
+
+  --color-link:#0071c1;           /* app link color (custom.scss) */
+  --color-link-site:#007bff;      /* site link color (Bootstrap default) */
+  --color-link-hover:var(--mcm-dark-teal-1);
+
+  --state-danger:var(--mcm-orange-1);
+  --state-warning:var(--mcm-yellow-1);
+  --state-success:var(--mcm-green-1);
+  --state-valid-outline:#26b050;  /* custom.scss .valid.modified */
+  --state-invalid-outline:#ff0000;
+  --state-focus-ring:#0d6efd;     /* PinEntry focused digit */
+
+  --overlay-scrim:rgba(0,0,0,.3);
+  --overlay-nav-hover:rgba(255,255,255,.1);
+  --overlay-nav-active:rgba(255,255,255,.25);
+}

@@ -1,0 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap");
+/* Open Sans ships in the KidsIdKit MAUI app (Resources/Fonts/OpenSans-Regular.ttf) and is
+   self-hosted here. Jost is a SUBSTITUTE for the geometric sans in the MCM teal logo
+   wordmark — no logo font file was provided. See readme.md "Font substitutions". */
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:400;font-display:swap;src:url("../assets/fonts/OpenSans-Regular.ttf") format("truetype")}

@@ -1,0 +1,18 @@
+:root{
+  /* Bootstrap spacer scale (site) */
+  --space-0:0;
+  --space-1:.25rem;
+  --space-2:.5rem;
+  --space-3:1rem;
+  --space-4:1.5rem;
+  --space-5:3rem;
+  /* App-specific literals from KidsIdKit CSS */
+  --space-card-pad:5px;      /* .content-card padding */
+  --space-card-gap:10px;     /* .content-card margin-bottom */
+  --space-list-gap:16px;     /* spacing between touch list links */
+  --space-section:2rem;      /* #content h1..h4 margin-top */
+
+  /* Minimum interactive size — enforced in the app (%min-size-48) */
+  --touch-min:48px;
+  --touch-handle:32px;       /* textarea resize grip hit target */
+}

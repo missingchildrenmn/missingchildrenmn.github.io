@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" viewport="700x400" name="KidsIdKit app" subtitle="Toolbar, side menu, child card, fields, PIN card" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:12px;background:var(--surface-sunken);font-family:var(--font-ui);color:var(--text-body)}.lbl{font-size:11px;letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--text-muted);margin:0 0 6px}a{color:var(--color-link)}a:hover{color:var(--color-link-hover)}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const NS=window.MissingChildrenMinnesotaDesignSystem_18e091;
+const {AppToolbar,AppMenu,ChildCard,EditText,EditBool,PinPad,Button}=NS;
+function Card(){return <div style={{display:'grid',gridTemplateColumns:'200px 1fr 1fr',gap:14,alignItems:'start'}}>
+<AppMenu active="Kids" iconBase="../.." style={{width:'100%',minWidth:0,borderRadius:6,overflow:'hidden'}} groups={[[{label:'Kids',icon:'people-outline'},{label:'Information',icon:'information-circle-outline'},{label:'Export Data',icon:'download-outline'},{label:'About',icon:'help-circle-outline'}],[{label:'Settings',icon:'settings-outline'},{label:'Sign out',icon:'log-out-outline'}]]}/>
+<div>
+<AppToolbar title="Kids" onMenu={()=>{}} iconBase="../.." style={{borderRadius:'6px 6px 0 0'}}/>
+<div style={{background:'var(--white)',padding:10,borderRadius:'0 0 6px 6px'}}>
+<ChildCard name="Ava Nguyen" age={9} birthday="4/2/2016" aliases="Avie" onRemove={()=>{}} iconBase="../.."/>
+<div style={{display:'flex',flexDirection:'column',gap:8}}>
+<EditText label="Given name" value="Ava"/>
+<EditBool label="Require PIN on launch" checked={true}/>
+</div>
+</div>
+</div>
+<div>
+<div className="lbl">Sign in</div>
+<PinPad subtitle="Your data stays on this device." filled={2} focusIndex={2} hint="4 to 8 digits" style={{transform:'scale(.85)',transformOrigin:'top left',width:'118%'}}>
+<Button variant="primary">Unlock</Button>
+<a href="#" style={{fontSize:'.9rem',color:'var(--gray-600)'}}>Safety information</a>
+</PinPad>
+</div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card/>);
+</script></body></html>

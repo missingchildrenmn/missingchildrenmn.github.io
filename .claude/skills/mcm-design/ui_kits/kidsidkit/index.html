@@ -1,0 +1,39 @@
+<!-- @dsCard group="KidsIdKit" viewport="900x780" name="KidsIdKit app" subtitle="Sign in, Kids list, child details, information, export, settings" -->
+<!-- @startingPoint section="KidsIdKit app" subtitle="Click-through of the digital ID kit app" viewport="900x780" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>KidsIdKit</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html,body{margin:0}body{background:var(--surface-sunken);font-family:var(--font-ui);display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}a{color:var(--color-link)}a:hover{color:var(--color-link-hover)}</style>
+</head><body><div id="root"></div>
+<script type="text/babel" src="AppShell.jsx"></script>
+<script type="text/babel" src="Screens.jsx"></script>
+<script type="text/babel">
+const KIDS=[
+  {name:'Ava Nguyen',age:9,birthday:'4/2/2016',aliases:'Avie'},
+  {name:'Miles Carter',age:13,birthday:'11/8/2012'}
+];
+function App(){
+  const [unlocked,setUnlocked]=React.useState(false);
+  const [infoOnly,setInfoOnly]=React.useState(false);
+  const [route,setRoute]=React.useState('Kids');
+  const [menuOpen,setMenuOpen]=React.useState(false);
+  const [kids,setKids]=React.useState(KIDS);
+  const [child,setChild]=React.useState(null);
+  const onMenu=()=>setMenuOpen(true);
+  const {AppShell,SignInScreen,KidsScreen,ChildScreen,InfoScreen,ExportScreen,SettingsScreen}=window;
+
+  let screen;
+  if(!unlocked&&!infoOnly) screen=<SignInScreen onUnlock={()=>setUnlocked(true)} onInfo={()=>{setInfoOnly(true);setRoute('Information');}}/>;
+  else if(child) screen=<ChildScreen onMenu={onMenu} child={child} onBack={()=>setChild(null)}/>;
+  else if(route==='Information') screen=<InfoScreen onMenu={onMenu}/>;
+  else if(route==='Export Data') screen=<ExportScreen onMenu={onMenu}/>;
+  else if(route==='Settings') screen=<SettingsScreen onMenu={onMenu}/>;
+  else if(route==='Sign out') { setTimeout(()=>{setUnlocked(false);setInfoOnly(false);setRoute('Kids');},0); screen=null; }
+  else screen=<KidsScreen onMenu={onMenu} kids={kids} openChild={setChild} removeKid={k=>setKids(kids.filter(x=>x!==k))}/>;
+
+  return <AppShell route={route} setRoute={setRoute} menuOpen={menuOpen&&(unlocked||infoOnly)} setMenuOpen={setMenuOpen}>{screen}</AppShell>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>
