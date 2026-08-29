@@ -18,7 +18,7 @@ gem "github-pages", group: :jekyll_plugins
 
 # Windows and JRuby do not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
-platforms :mingw, :x64_mingw, :mswin, :jruby do
+platforms :windows, :jruby do
   gem "tzinfo", "~> 1.2"
   gem "tzinfo-data"
 end
@@ -26,4 +26,4 @@ end
 # Performance-booster for watching directories on Windows. 0.2.0 is the first
 # release that builds on Ruby 3.x; this is optional, so drop the line if it
 # gives you trouble.
-gem "wdm", "~> 0.2", :platforms => [:mingw, :x64_mingw, :mswin]
+gem "wdm", "~> 0.2", :platforms => [:windows]
