@@ -54,6 +54,10 @@ plugins:
 exclude:
   # repo-only, not part of the site
   - CLAUDE.md
+  # the CC BY-NC-ND license covering this repo. GitHub surfaces it from the
+  # repo root; it was being served at /LICENSE as a bare text page, which is
+  # not site content. Nothing links to that URL.
+  - LICENSE
   # the github-pages gem excludes this by default; GitHub Pages manages the
   # custom domain from the repo-root CNAME + repo settings, not from _site/
   - CNAME
