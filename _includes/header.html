@@ -8,6 +8,11 @@ same #nav-header / #nav-container ids, same checkbox-and-label nav toggle, same
      stops rendering black and takes the brand teal set in assets/main.scss.
   3. A skip link, for keyboard users landing ahead of seven nav items.
   4. The nav toggle's aria-label, which upstream sets to the useless "button".
+  5. Nav labels read from `nav_title` when a page sets one, falling back to
+     `title`. missing-child.markdown uses this to appear as "Get Help Now" in
+     the nav while its own <h1> stays "Missing Child".
+  6. A Donate button closing the nav, per the July 2026 review: the support
+     actions were reachable only from a text link mid-list.
 
 Below the header sits the crisis bar. Its phone numbers come from site.mcm in
 _config.yml -- they are safety-critical, so they live in exactly one place.
@@ -36,9 +41,17 @@ _config.yml -- they are safety-critical, so they live in exactly one place.
           {% for path in page_paths %}
             {% assign my_page = site.pages | where: "path", path | first %}
             {% if my_page.title %}
-              <a class="ml-3 ml-md-0 p-2 d-block d-md-inline-block" href="{{ my_page.url | relative_url }}"{% if page.url == my_page.url %} aria-current="page"{% endif %}>{{ my_page.title | escape }}</a>
+              <a class="ml-3 ml-md-0 p-2 d-block d-md-inline-block" href="{{ my_page.url | relative_url }}"{% if page.url == my_page.url %} aria-current="page"{% endif %}>{{ my_page.nav_title | default: my_page.title | escape }}</a>
             {% endif %}
           {% endfor %}
+
+          {%- comment -%}
+            Donation is the one action the review found hardest to take. It
+            points at the "Give a Gift" section of /support/ rather than the top
+            of that page, which opens on volunteering.
+          {%- endcomment -%}
+          <a class="mcm-nav-cta ml-3 ml-md-0 mt-2 mt-md-0 d-block d-md-inline-block"
+             href="{{ "/support/#give-a-gift" | relative_url }}">Donate</a>
         </div>
       </nav>
     {% endif %}

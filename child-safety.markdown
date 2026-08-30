@@ -16,6 +16,8 @@ Each program deals with the issues facing children as they grow.
 Overviews of each program follow. 
 Books may be purchased directly from Missing Children Minnesota, or ordered at any bookstore using the ISBN numbers.
 
+[Call (612) 334-9449 to request a speaker](tel:+16123349449){: .mcm-cta }
+
 
 ### Informational Brochures
 
@@ -28,13 +30,17 @@ Books may be purchased directly from Missing Children Minnesota, or ordered at a
 
 All of these brochures are available at no charge to the public.
 
-**Please call Missing Children Minnesota at (612) 334-9449 or 1-888-RUN-YELL to request a copy.**
+**Please call Missing Children Minnesota at [(612) 334-9449](tel:+16123349449) or [1-888-RUN-YELL](tel:+18887869355) to request a copy.**
+
+[Call (612) 334-9449 to request brochures](tel:+16123349449){: .mcm-cta }
 
 ## Speakers & Presentations
 
 Speakers are available for all of the following programs.
 
-Please contact Missing Children Minnesota to schedule a speaker for your group.
+Please contact Missing Children Minnesota at [(612) 334-9449](tel:+16123349449) or
+[General.Info@missingchildrenmn.com](mailto:General.Info@missingchildrenmn.com) to schedule a
+speaker for your group.
 
 ### _Run, Yell & Tell!®_ Ages 3-8
 
@@ -42,18 +48,18 @@ Please contact Missing Children Minnesota to schedule a speaker for your group.
 
 **_Run, Yell & Tell!®_ Book:** $5.00+$2.50 shipping & handling. (ISBN 0-9641123-0-2)
 
-### I Want To Be S.A.F.E.R.® Ages 8-12
+### _I Want To Be S.A.F.E.R.®_ Ages 8-12
 
-I Want to Be S.A.F.E.R.® is a personal safety and abduction prevention program designed for children from third through eighth grade. It teaches children to be Street-wise, Alert, Fast-thinking, Educated and Responsible and to be aware and conscious of their own personal safety.
+**_I Want To Be S.A.F.E.R.®_** is a personal safety and abduction prevention program designed for children from third through eighth grade. It teaches children to be Street-wise, Alert, Fast-thinking, Educated and Responsible and to be aware and conscious of their own personal safety.
 
-**I Want To Be S.A.F.E.R.® Book:** $6.00+$2.50 shipping & handling (ISBN 0-9641123-4-5)
+**_I Want To Be S.A.F.E.R.®_ Book:** $6.00+$2.50 shipping & handling (ISBN 0-9641123-4-5)
 
-### Erica’s Choices: A Decision-Making Guide for Teens
+### _Erica’s Choices_: A Decision-Making Guide for Teens
 
-Erica’s Choices presents alternatives to running away and an effective personal safety program for junior and senior high school students. This program teaches decision making skills and encourages young people to take advantage of safe alternatives to running away.
+**_Erica’s Choices_** presents alternatives to running away and an effective personal safety program for junior and senior high school students. This program teaches decision making skills and encourages young people to take advantage of safe alternatives to running away.
 
-**Erica’s Choices book:** $6.00+$2.50 shipping and handling (ISBN 0-9641123-3-7)
+**_Erica’s Choices_ book:** $6.00+$2.50 shipping and handling (ISBN 0-9641123-3-7)
 
-### Beyond Stranger Danger: A Program for Adults and Parents
+### _Beyond Stranger Danger_: A Program for Adults and Parents
 
-Awareness Plus is a program for parents and all adults concerned about children. It provides child safety and abduction prevention information, information on available resources and what steps to take in the event of abduction. It also covers how to talk to children about protecting themselves from abuse, exploitation and abduction.
+**_Beyond Stranger Danger_** is a program for parents and all adults concerned about children. It provides child safety and abduction prevention information, information on available resources and what steps to take in the event of abduction. It also covers how to talk to children about protecting themselves from abuse, exploitation and abduction.

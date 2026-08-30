@@ -9,6 +9,9 @@ full post list, giving each post its own <h1> -- several h1s per document. Here 
 home page leads with the mark and the mission, then offers three routes, then the
 organisation's own words, then the three most recent posts (as h2).
 
+Between the mark and the mission sits the emergency block added for the July 2026
+review -- see the comment at its markup.
+
 The routes are hairline-ruled rows, not cards: the brand book states plainly that
 the website uses no cards at all, so there is no offset teal shadow here.
 
@@ -33,6 +36,29 @@ Route copy is drawn from the destination pages themselves, not invented.
          alt="{{ site.title | escape }}">
   </h1>
 
+  {%- comment -%}
+    The emergency block, added for the July 2026 review: a parent in crisis
+    should not have to reach /resources/ to learn there is no waiting period.
+    It sits under the mark rather than above it so the document still opens on
+    its <h1>; the site-wide crisis bar is already above the banner.
+
+    Warning colours, not a card -- pale yellow ground and an orange rule, square
+    corners, no shadow and no hairline. No emoji: the brand book rules them out
+    of product UI, so the siren the reviewer drew is a colour and a rule here.
+  {%- endcomment -%}
+  <aside class="mcm-alert" aria-labelledby="mcm-alert-title">
+    <p class="mcm-alert-title" id="mcm-alert-title">Is a child missing right now?</p>
+    <p class="mcm-alert-lede">Act now. There is no waiting period to report a missing child.</p>
+    <ul class="mcm-alert-steps">
+      <li>Call <strong>911</strong> or your local police department.</li>
+      <li>Call Missing Children Minnesota at
+        <a href="{{ site.mcm.phone_href }}">{{ site.mcm.phone }}</a> or
+        <a href="{{ site.mcm.hotline_href }}">{{ site.mcm.hotline }} ({{ site.mcm.hotline_digits }})</a>.</li>
+      <li>Gather recent photos and identifying information.</li>
+    </ul>
+    <a class="mcm-cta mcm-cta--urgent" href="{{ "/missing-child/" | relative_url }}">Get help now</a>
+  </aside>
+
   <p class="mcm-mission">{{ site.description | escape }}</p>
 
   <nav class="mcm-routes" aria-label="Where to start">
@@ -56,7 +82,7 @@ Route copy is drawn from the destination pages themselves, not invented.
 
   {% assign posts = site.posts | slice: 0, 3 %}
   {% if posts.size > 0 %}
-    <h2 class="h4 mt-5">From the blog</h2>
+    <h2 class="h4 mt-5">Recent updates</h2>
     <ul class="post-list">
       {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
       {% for post in posts %}
@@ -67,7 +93,7 @@ Route copy is drawn from the destination pages themselves, not invented.
       {% endfor %}
     </ul>
     <p class="rss-subscribe">
-      <a href="{{ "/blog/" | relative_url }}">Read the blog</a>
+      <a href="{{ "/blog/" | relative_url }}">Read all updates</a>
       {% if site.plugins contains "jekyll-feed" %}
         &middot; subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
       {% endif %}
