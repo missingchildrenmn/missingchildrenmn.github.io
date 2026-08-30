@@ -25,6 +25,7 @@ Listed below are a number of additional resources that may be helpful to parents
 ### Minnesota
 
 * Missing Children Minnesota [(612)334-9449](tel:+16123349449) Toll Free: [888-786-9355](tel:+18887869355)
+* [Kids Id Kit](/kids-id-kit/) — our free app, which keeps a current photo and description of your child ready on your phone
 * [Minnesota BCA Missing and Unidentified Persons Clearinghouse](https://dps.mn.gov/divisions/bca/bca-divisions/administrative/Pages/missing-unidentified-persons.aspx)
 * [Children's Mental Health Crisis (COPE) Team numbers by County](https://mn.gov/dhs/people-we-serve/people-with-disabilities/health-care/childrens-mental-health/resources/crisis-contacts.jsp)
 * Call **CRISIS (274747)** from anywhere in the State of Minnesota to reach the local County crisis team.

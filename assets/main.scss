@@ -522,6 +522,130 @@ label[for="nav-trigger"] {
 }
 
 // ---------------------------------------------------------------------------
+// Kids Id Kit -- store links, QR codes, screenshots
+// ---------------------------------------------------------------------------
+// The download block on /kids-id-kit/. Two store columns side by side, split by
+// a hairline rule -- NOT two cards. Same reasoning as .mcm-routes: the brand
+// book says the website uses no cards, so there is no box, no shadow, no radius
+// on anything here except the store badges' own artwork.
+//
+// The badges themselves are Apple's and Google's official files, served locally
+// rather than hotlinked. Neither may be recoloured, cropped or redrawn, so they
+// carry no brand styling -- only a size. They are also the one place the site
+// uses vendor imagery; the "no icon system" rule is about MCM's own UI, and a
+// store badge is a trademark, not an icon.
+// The app's own mark, so the thing in the store is recognisable before the tap.
+// Given a real alt, not an empty one: unlike a banner it is identification, not
+// mood. This is not a breach of the "no icon system" rule -- that rule is about
+// MCM's own UI, and this is the product mark.
+.mcm-app-icon {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 1.5rem auto 0;
+}
+
+.mcm-stores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-section);
+  // Capped and centred at the same 44rem measure as .mcm-alert and .mcm-mission.
+  // Left to the full 1140px container the two columns drift so far apart that
+  // each badge stops reading as a pair with the code under it.
+  max-width: 44rem;
+  margin: 1rem auto var(--space-section);
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  // #content justifies prose; these columns are centred labels, not prose.
+  text-align: center;
+}
+
+.mcm-store {
+  flex: 1 1 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+// The badge link is the real call to action, so it gets the 48px touch target
+// the density rule asks for -- the Apple badge is exactly 48px tall, and the
+// Google badge is taller because its clear space is baked into the file.
+.mcm-store-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+}
+
+.mcm-store-badge {
+  display: block;
+  width: auto;
+}
+
+// Sized so the two read as the same badge. Apple's SVG is the artwork alone at
+// 2.99:1; Google's PNG bakes in padding, so at 64px its visible badge lands at
+// roughly 48px too.
+.mcm-store-badge--apple {
+  height: 48px;
+}
+
+.mcm-store-badge--google {
+  height: 64px;
+  // Absorb the padding Google builds into the file so the two badges sit on the
+  // same optical baseline rather than 8px apart.
+  margin: -8px 0;
+}
+
+// The QR codes are generated from the same two URLs the badges link to and
+// committed as SVG -- no third-party QR service, so the page makes no external
+// request and nobody gets to log who scanned what. White ground is part of the
+// image: a QR needs its quiet zone and its contrast, whatever the page does.
+.mcm-store-qr {
+  display: block;
+  width: 160px;
+  height: 160px;
+  background: #fff;
+}
+
+.mcm-store-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: .875rem;
+}
+
+@media (max-width: 575px) {
+  // Stacked on a phone, the QR codes are pointless -- the reader is holding the
+  // device that would scan them, and the badge above is one tap. Hide them
+  // rather than making someone scroll past two 160px squares.
+  .mcm-store-qr,
+  .mcm-store-note {
+    display: none;
+  }
+
+  .mcm-stores {
+    gap: 1.25rem;
+  }
+}
+
+// Screenshots. Plain images on the page ground, no phone frame, no shadow.
+.mcm-screens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-section);
+  margin: 1rem 0 var(--space-section);
+}
+
+.mcm-screen {
+  width: 240px;
+  max-width: 45%;
+  height: auto;
+  border: 1px solid var(--border-subtle);
+}
+
+// ---------------------------------------------------------------------------
 // Post lists
 // ---------------------------------------------------------------------------
 // blog.html emits .post-list / .post-meta / .post-link, which minima-reboot --

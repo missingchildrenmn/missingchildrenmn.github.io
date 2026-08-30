@@ -34,6 +34,14 @@ All of these brochures are available at no charge to the public.
 
 [Call (612) 334-9449 to request brochures](tel:+16123349449){: .mcm-cta }
 
+## The Kids Id Kit App
+
+The Kids Id Kit brochure also comes as a free app. It keeps a current photograph
+and description of each of your children on your own phone, behind a PIN, so the
+details police ask for first are ready before you need them.
+
+[Get the Kids Id Kit app](/kids-id-kit/){: .mcm-cta }
+
 ## Speakers & Presentations
 
 Speakers are available for all of the following programs.
