@@ -45,8 +45,16 @@ Route copy is drawn from the destination pages themselves, not invented.
     Warning colours, not a card -- pale yellow ground and an orange rule, square
     corners, no shadow and no hairline. No emoji: the brand book rules them out
     of product UI, so the siren the reviewer drew is a colour and a rule here.
+
+    <section>, not <aside>. An <aside> maps to role="complementary", which screen
+    readers announce as side content tangential to the page -- exactly backwards
+    for the most urgent thing on it. Named by aria-labelledby, <section> becomes
+    role="region" and is announced by its own heading text.
+
+    Not role="alert" either: that is for messages that appear dynamically and
+    interrupt whatever is being read. On page load it does nothing.
   {%- endcomment -%}
-  <aside class="mcm-alert" aria-labelledby="mcm-alert-title">
+  <section class="mcm-alert" aria-labelledby="mcm-alert-title">
     <p class="mcm-alert-title" id="mcm-alert-title">Is a child missing right now?</p>
     <p class="mcm-alert-lede">Act now. There is no waiting period to report a missing child.</p>
     <ul class="mcm-alert-steps">
@@ -57,7 +65,7 @@ Route copy is drawn from the destination pages themselves, not invented.
       <li>Gather recent photos and identifying information.</li>
     </ul>
     <a class="mcm-cta mcm-cta--urgent" href="{{ "/missing-child/" | relative_url }}">Get help now</a>
-  </aside>
+  </section>
 
   <p class="mcm-mission">{{ site.description | escape }}</p>
 

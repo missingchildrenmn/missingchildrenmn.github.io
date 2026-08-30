@@ -13,6 +13,11 @@ same #nav-header / #nav-container ids, same checkbox-and-label nav toggle, same
      the nav while its own <h1> stays "Missing Child".
   6. A Donate button closing the nav, per the July 2026 review: the support
      actions were reachable only from a text link mid-list.
+  7. aria-label on the <nav>. The home page carries a second one (the routes in
+     _layouts/home.html, labelled "Where to start"), so without a name this one
+     appears in a screen reader's landmark list as a bare "navigation". The
+     label is "Main", not "Main navigation" -- the role is announced already,
+     and doubling it reads as "main navigation navigation".
 
 Below the header sits the crisis bar. Its phone numbers come from site.mcm in
 _config.yml -- they are safety-critical, so they live in exactly one place.
@@ -32,7 +37,7 @@ _config.yml -- they are safety-critical, so they live in exactly one place.
     </a>
 
     {% if page_paths %}
-      <nav id="nav-menu-container" class="text-right navbar-light">
+      <nav id="nav-menu-container" class="text-right navbar-light" aria-label="Main">
         <input type="checkbox" id="nav-trigger" class="d-none"/>
         <label for="nav-trigger" aria-label="Menu" class="m-2 d-inline-block d-md-none navbar-toggler-icon">
         </label>
