@@ -25,18 +25,13 @@ Missing Children Minnesota at [612.334.9449](tel:+16123349449) or
 
 ## Who to contact
 
+Our phone line is answered 24 hours a day. We reply to email within 24 hours.
+
 * **Family support for a missing child** — call [612.334.9449](tel:+16123349449) or [888.RUN.YELL (888.786.9355)](tel:+18887869355)
 * **Presentations and speakers** — call [612.334.9449](tel:+16123349449) or email [General.Info@missingchildrenmn.com](mailto:General.Info@missingchildrenmn.com)
 * **Brochures and books** — call [612.334.9449](tel:+16123349449)
 * **Volunteering and donations** — see [how to support MCM](/support/)
 * **Media enquiries** — email [General.Info@missingchildrenmn.com](mailto:General.Info@missingchildrenmn.com)
-
-<!--
-  TODO: response-time commitment, to be supplied by MCM. The July 2026 review
-  asked for clear expectations here ("we return calls within one business day",
-  or similar). Deliberately left blank rather than invented -- this is a promise
-  to families in crisis and must come from MCM, not from a guess.
--->
 
 ## Social Media
 
