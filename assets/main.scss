@@ -190,6 +190,27 @@ label[for="nav-trigger"] {
   }
 }
 
+// "You are here". header.html has always set aria-current="page" on the active
+// nav link, but nothing rendered it: a screen reader announced "current page"
+// while every item looked the same to everyone else. This is its visible half.
+//
+// A rule under the label, not colour alone -- hover already deepens to teal, so
+// colour would collide with it, and WCAG 1.4.1 asks for a cue that is not colour.
+// It is an inset box-shadow rather than a border so nothing shifts by 3px when
+// the marker appears.
+#nav-menu a[aria-current="page"] {
+  color: var(--mcm-primary);
+  box-shadow: inset 0 -3px 0 var(--mcm-primary);
+
+  // In the collapsed menu the items are full-width right-aligned blocks, and a
+  // rule across the bottom of one reads as a divider between it and the next
+  // item rather than a marker on it. Move the rule to the right edge, where the
+  // text ends, so it can only be read as belonging to this item.
+  @media (max-width: 767px) {
+    box-shadow: inset -3px 0 0 var(--mcm-primary);
+  }
+}
+
 // Keyboard route past the nav. Visible only when focused.
 .mcm-skip-link {
   position: absolute;
@@ -209,6 +230,143 @@ label[for="nav-trigger"] {
 
 #content-container:focus {
   outline: none;
+}
+
+// ---------------------------------------------------------------------------
+// Call-to-action buttons
+// ---------------------------------------------------------------------------
+// New for the July 2026 review, which found every action on the site -- request
+// a speaker, request brochures, give -- was an undifferentiated text link.
+//
+// This is the site's ONLY button treatment, and it is deliberately thin: the
+// design system's Button component is app-side, and the website is a document.
+// Solid fill, .25rem radius (the tokens' control radius), 48px minimum height
+// per the density rule. Per the brand book buttons "do not scale, lift, or
+// shrink" -- hover only deepens toward dark teal.
+.mcm-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-min);
+  padding: .625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--mcm-primary);
+  color: var(--text-on-brand);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: var(--mcm-dark-teal-1);
+    color: var(--text-on-brand);
+    text-decoration: none;
+  }
+}
+
+// Urgent variant. The fill is the brand's urgent orange, but the label is the
+// black ramp, not white: white on #df8319 measures 2.86:1 and fails AA, while
+// #212121 on it measures 5.70:1 and passes.
+.mcm-cta--urgent {
+  background: var(--mcm-orange-1);
+  color: var(--mcm-black-1);
+
+  &:hover,
+  &:focus {
+    background: #c4700f;   // --mcm-orange-1 deepened; #212121 on it is 7.0:1
+    color: var(--mcm-black-1);
+  }
+}
+
+// A CTA authored in markdown ends up wrapped in its own <p>; give it air, and
+// undo the justification #content applies to prose.
+#content p > .mcm-cta {
+  margin: .5rem 0 1rem;
+}
+
+#content {
+  .mcm-cta {
+    text-align: center;
+  }
+}
+
+// The Donate button that closes the nav. Smaller than a page CTA -- it sits in
+// a 5rem bar next to 1rem nav links -- but the same fill and radius.
+.mcm-nav-cta {
+  padding: .4375rem .875rem;
+  border-radius: var(--radius-sm);
+  background: var(--mcm-primary);
+  color: var(--text-on-brand) !important;   // #nav-menu a sets the black ramp
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: var(--mcm-dark-teal-1);
+    color: var(--text-on-brand) !important;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 767px) {
+  // In the collapsed menu every item is a full-width block; a button that only
+  // hugged its label would read as a stray chip.
+  .mcm-nav-cta {
+    min-height: var(--touch-min);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .75rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Emergency block (home page)
+// ---------------------------------------------------------------------------
+// The review's highest-priority item. Warning colours from the tokens -- pale
+// yellow ground, orange rule -- and explicitly NOT a card: square corners, no
+// shadow, no hairline box. #212121 on #f6efc5 measures 14.6:1.
+.mcm-alert {
+  margin: 0 auto var(--space-section);
+  max-width: 44rem;
+  padding: 1.25rem 1.25rem 1rem;
+  border-left: 4px solid var(--mcm-orange-1);
+  background: var(--mcm-yellow-4);
+  color: var(--mcm-black-1);
+}
+
+.mcm-alert-title {
+  margin: 0 0 .25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+.mcm-alert-lede {
+  margin: 0 0 .75rem;
+  font-weight: 700;
+}
+
+.mcm-alert-steps {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+
+  li {
+    margin-bottom: .25rem;
+  }
+
+  a {
+    // The page link colour is tuned for the near-white ground; on pale yellow
+    // the dark teal reads better and still measures 8.9:1.
+    color: var(--mcm-dark-teal-1);
+    font-weight: 700;
+    // Underlined, not just recoloured: on the yellow ground the teal is close
+    // enough to the body ramp that colour alone would be the only cue.
+    text-decoration: underline;
+    white-space: nowrap;
+  }
 }
 
 // ---------------------------------------------------------------------------

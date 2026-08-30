@@ -54,6 +54,11 @@ permalink: /:year/:month/:day/:title/
 # Nav order. The theme's _includes/header.html falls back to alphabetical page
 # order when this is unset, which buried Missing Child -- the crisis page -- in
 # fifth place. Ordered here by how urgently a visitor needs the page.
+#
+# Labels come from each page's `nav_title`, falling back to its `title`. Only
+# missing-child.markdown sets one: it appears here as "Get Help Now" while its
+# own <h1> stays "Missing Child". A Donate button closes the nav; it is markup
+# in header.html, not a page, so it is not listed here.
 header_pages:
   - missing-child.markdown
   - child-safety.markdown

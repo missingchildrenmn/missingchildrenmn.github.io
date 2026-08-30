@@ -5,8 +5,6 @@ permalink: /support/
 banner: /assets/support-banner.jpg
 ---
 
-## HOW TO SUPPORT MISSING CHILDREN MINNESOTA
-
 Here are just a few ways to become involved!
 
 ### Volunteer
@@ -19,7 +17,7 @@ We always have projects and needs that can be filled by volunteers. Whether you 
 * Educational Program Ambassadors and Presenters - Are you passionate about child safety education, and making community connections? We could use a few messengers to get the word out about our educational programs, and a few good people willing to get up and present! Training is provided. We will make sure you have what you need to do a great presentation!
 * Mobile app developer - We have an app in development that needs some more talent to take it across the finish line!
 
-[Contact us](/contact/) to get started as a Missing Children Minnesota Volunteer today!
+[Contact us to volunteer](/contact/){: .mcm-cta }
 
 Many companies offer paid time off for their employees to volunteer, or even donation matching — check with your human resources or community relations department to see how your employer may amplify your gifts of time or money.
 
@@ -31,9 +29,11 @@ Gifts can be mailed to us at [our business address](/contact).
 
 There are also a number of ways that you can donate online:
 
-* GiveMN.org: https://www.givemn.org/organization/Missing-Children-Minnesota
-* PayPal: https://www.paypal.com/fundraiser/charity/1880289
-* Stock Donator: https://stockdonator.com/stock-information/?oid=c8fe73
+* [Give through GiveMN.org](https://www.givemn.org/organization/Missing-Children-Minnesota)
+* [Give through PayPal](https://www.paypal.com/fundraiser/charity/1880289)
+* [Donate stock through Stock Donator](https://stockdonator.com/stock-information/?oid=c8fe73)
+
+[Give through GiveMN.org](https://www.givemn.org/organization/Missing-Children-Minnesota){: .mcm-cta }
 
 ### Designate us in your workplace giving campaign
 
