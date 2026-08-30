@@ -50,9 +50,14 @@ and one is not to be added without asking.
       </div>
       {% endif %}
 
+      {%- comment -%}
+        The vision, not the mission. site.description leads the home page, and
+        running it here too put the same paragraph twice on one screen. The
+        vision reads as a closing aspiration, which suits a footer.
+      {%- endcomment -%}
       <div class="col-12 col-lg-4">
-        <h2>Our mission</h2>
-        <p class="text-secondary">{{ site.description | escape }}</p>
+        <h2>Our vision</h2>
+        <p class="text-secondary">{{ site.vision | escape }}</p>
       </div>
 
     </div>

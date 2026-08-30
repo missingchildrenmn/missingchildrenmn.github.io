@@ -20,8 +20,28 @@
 
 title: Missing Children Minnesota
 email: general.info@missingchildrenmn.com
+# The mission statement, verbatim. It does three jobs: the lead paragraph on the
+# home page, the <meta name="description"> and og:description that jekyll-seo-tag
+# builds, and the opening of /about-mcm/. It is longer than the ~155 characters a
+# search snippet shows, so results truncate it -- accepted deliberately rather
+# than paraphrasing an approved statement.
 description: >- # this means to ignore newlines until "baseurl:"
-  The mission of Missing Children Minnesota is to help in locating missing children; to provide advocacy and support services to families of missing children and to provide information and prevention education to the public regarding missing children and runaways.
+  The mission of Missing Children Minnesota is to support families through personal safety education programs for children and to provide support and referral services to the families of missing children.
+
+# Short mission summary. This exists solely to keep the home page's <title> to a
+# sane length: jekyll-seo-tag builds that title as `site.title | tagline`, and
+# falls back to the full site.description when no tagline is set -- which made a
+# 231-character title where a search result shows about 60. Not rendered on any
+# page; changing it changes only the home page's browser tab and search listing.
+tagline: Abduction prevention education and support for searching families
+
+# The vision statement, verbatim. Rendered in the footer of every page and on
+# /about-mcm/. It is kept out of the home page's lead on purpose: the brand book
+# reserves aspirational, institutional voice for the history section, and the
+# home page's first words should be concrete for a reader who may be in crisis.
+vision: >-
+  We envision a world where all young people in the state of Minnesota have the skills and resources to be safe. Caregivers have the resources to nurture, guide, and protect their young people.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 # The live hostname (see CNAME). jekyll-seo-tag builds canonical and og:url from
 # this; leaving it blank made local builds emit http://localhost:4000 canonicals.

@@ -5,6 +5,14 @@ permalink: /about-mcm/
 banner: /assets/about-mcm-banner.jpg
 ---
 
+## Our Mission
+
+{{ site.description }}
+
+## Our Vision
+
+{{ site.vision }}
+
 ## The History of MCM
 
 In the summer of 1983, a group of parents of missing children met in Minneapolis to offer mutual support and comfort.
