@@ -2,9 +2,8 @@
 layout: page
 title: Support
 permalink: /support/
+banner: /assets/support-banner.jpg
 ---
-
-![](/assets/support-banner.jpg)
 
 ## HOW TO SUPPORT MISSING CHILDREN MINNESOTA
 
@@ -15,12 +14,12 @@ Here are just a few ways to become involved!
 We always have projects and needs that can be filled by volunteers. Whether you have a few hours every month or every week, there are many ways you can help: 
 
 * Organizers - Organize a fundraiser or educational event! There is a real gift to running an event that people enjoy and where people give generously or take the opportunity to come and learn how to make kids safer!
-* Social Media Content Creators -Are you a graphic artist or simply gifted at creating attention-grabbing infographics, appealing educational pamphlets, TicToks that draw eyeballs, or Instagram posts that speak volumes? We would love to have you volunteer with us! We have Canva, and just need people with time and talent.
+* Social Media Content Creators -Are you a graphic artist or simply gifted at creating attention-grabbing infographics, appealing educational pamphlets, TikToks that draw eyeballs, or Instagram posts that speak volumes? We would love to have you volunteer with us! We have Canva, and just need people with time and talent.
 * Poster Partners - Do you like to walk around your neighborhood? Do you have a gift for talking to people? Are you reliable and detail-oriented? We would love to have you distribute posters and flyers in your area AND (just as important) take them down again when children are located!
 * Educational Program Ambassadors and Presenters - Are you passionate about child safety education, and making community connections? We could use a few messengers to get the word out about our educational programs, and a few good people willing to get up and present! Training is provided. We will make sure you have what you need to do a great presentation!
 * Mobile app developer - We have an app in development that needs some more talent to take it across the finish line!
 
-[Contact us](contact) to get started as a Missing Children Minnesota Volunteer today!
+[Contact us](/contact/) to get started as a Missing Children Minnesota Volunteer today!
 
 Many companies offer paid time off for their employees to volunteer, or even donation matching — check with your human resources or community relations department to see how your employer may amplify your gifts of time or money.
 

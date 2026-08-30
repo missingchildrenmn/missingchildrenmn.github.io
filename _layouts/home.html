@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{%- comment -%}
+Shadows the theme's _layouts/home.html.
+
+The theme's version dropped the page body into a <header> and followed it with the
+full post list, giving each post its own <h1> -- several h1s per document. Here the
+home page leads with the mark and the mission, then offers three routes, then the
+organisation's own words, then the three most recent posts (as h2).
+
+The routes are hairline-ruled rows, not cards: the brand book states plainly that
+the website uses no cards at all, so there is no offset teal shadow here.
+
+Route copy is drawn from the destination pages themselves, not invented.
+{%- endcomment -%}
+
+{% if page.banner %}
+  {% include banner.html banner=page.banner %}
+{% endif %}
+
+<div id="mcm-home">
+
+  {%- comment -%}
+    The mark is the home page's h1 -- its alt text supplies the heading. The
+    theme's old home layout gave the page no h1 at all and then handed one to
+    every post in the list.
+  {%- endcomment -%}
+  <h1 class="mcm-lockup">
+    <img src="{{ "/assets/logo/mcm-logo-teal.png" | relative_url }}"
+         srcset="{{ "/assets/logo/mcm-logo-teal.png" | relative_url }} 1x, {{ "/assets/logo/mcm-logo-teal-2x.png" | relative_url }} 2x"
+         width="455" height="225"
+         alt="{{ site.title | escape }}">
+  </h1>
+
+  <p class="mcm-mission">{{ site.description | escape }}</p>
+
+  <nav class="mcm-routes" aria-label="Where to start">
+    <a class="mcm-route mcm-route--urgent" href="{{ "/missing-child/" | relative_url }}">
+      <h2>My child is missing</h2>
+      <p>What to do immediately, step by step &mdash; and who to call first.</p>
+    </a>
+    <a class="mcm-route" href="{{ "/child-safety/" | relative_url }}">
+      <h2>Prevention and safety programs</h2>
+      <p>Abduction prevention and personal safety programs for children, teens and adults, plus free brochures.</p>
+    </a>
+    <a class="mcm-route" href="{{ "/support/" | relative_url }}">
+      <h2>Support our work</h2>
+      <p>Volunteer, give a gift, or designate MCM in your workplace giving campaign.</p>
+    </a>
+  </nav>
+
+  <div id="content">
+    {{ content }}
+  </div>
+
+  {% assign posts = site.posts | slice: 0, 3 %}
+  {% if posts.size > 0 %}
+    <h2 class="h4 mt-5">From the blog</h2>
+    <ul class="post-list">
+      {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+      {% for post in posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="rss-subscribe">
+      <a href="{{ "/blog/" | relative_url }}">Read the blog</a>
+      {% if site.plugins contains "jekyll-feed" %}
+        &middot; subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
+      {% endif %}
+    </p>
+  {% endif %}
+
+</div>

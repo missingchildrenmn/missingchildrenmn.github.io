@@ -1,0 +1,35 @@
+---
+layout: default
+---
+{%- comment -%}
+Shadows the theme's _layouts/page.html. Two changes:
+
+  1. The banner photograph is rendered here, from front matter, instead of being
+     an inline markdown image at the top of every page's body. That is what buys
+     the explicit width/height (no layout shift as a 200KB photo loads), the
+     srcset (phones pull the 900px file, not the 1800px one), and a guarantee
+     that every page actually opens with one. Order is title-then-banner, matching
+     the design system's own ui_kits/website/SiteShell.jsx.
+
+     alt is empty on purpose: these photographs are decorative and carry no text,
+     so announcing them would only interrupt a screen reader. See CLAUDE.md.
+
+  2. The content div is justified, via #content in assets/main.scss. The theme
+     justified posts but not pages, though the brand book records justified
+     long-form body copy as a site-wide trait.
+{%- endcomment -%}
+<article>
+
+  <header class="pt-4 pb-3">
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+
+  {% if page.banner %}
+    {% include banner.html banner=page.banner %}
+  {% endif %}
+
+  <div id="content">
+    {{ content }}
+  </div>
+
+</article>

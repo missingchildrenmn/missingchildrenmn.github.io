@@ -2,19 +2,24 @@
 layout: page
 title: Blog
 permalink: /blog/
+banner: /assets/about-mcm-banner.jpg
 ---
+
+{%- comment -%}
+The post list is hand-rendered here rather than left to the theme's home layout.
+It emits .post-list / .post-meta / .post-link -- classes minima-reboot never
+styled, unlike upstream minima, so this page used to render as raw bullets while
+the home page's list was styled. assets/main.scss now styles them, and the markup
+below matches _layouts/home.html so the two lists look the same.
+{%- endcomment -%}
 
 {%- if site.posts.size > 0 -%}
 <ul class="post-list">
+  {%- assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" -%}
   {%- for post in site.posts -%}
   <li>
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>
-    <h3>
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
-      </a>
-    </h3>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
     {%- if site.show_excerpts -%}
       {{ post.excerpt }}
     {%- endif -%}
@@ -23,4 +28,6 @@ permalink: /blog/
 </ul>
 
 <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- else -%}
+<p>There are no posts yet.</p>
 {%- endif -%}

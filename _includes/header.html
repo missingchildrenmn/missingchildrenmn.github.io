@@ -1,0 +1,55 @@
+{%- comment -%}
+Shadows the theme's _includes/header.html. The theme's structure is kept intact --
+same #nav-header / #nav-container ids, same checkbox-and-label nav toggle, same
+768px collapse -- so the theme's own layout CSS still applies. Four changes:
+
+  1. The text site title becomes the MCM teal mark.
+  2. .border-dark is dropped, so the theme's uncolored `border-top: 5px solid`
+     stops rendering black and takes the brand teal set in assets/main.scss.
+  3. A skip link, for keyboard users landing ahead of seven nav items.
+  4. The nav toggle's aria-label, which upstream sets to the useless "button".
+
+Below the header sits the crisis bar. Its phone numbers come from site.mcm in
+_config.yml -- they are safety-critical, so they live in exactly one place.
+{%- endcomment -%}
+<a class="mcm-skip-link" href="#content-container">Skip to content</a>
+
+<header id="nav-header" class="border-left-0 border-right-0">
+  <div id="nav-container" class="container position-relative d-flex justify-content-between align-items-center">
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
+
+    <a class="mcm-brand m-0" href="{{ "/" | relative_url }}">
+      <img src="{{ "/assets/logo/mcm-logo-teal.png" | relative_url }}"
+           srcset="{{ "/assets/logo/mcm-logo-teal.png" | relative_url }} 1x, {{ "/assets/logo/mcm-logo-teal-2x.png" | relative_url }} 2x"
+           width="455" height="225"
+           alt="{{ site.title | escape }}">
+    </a>
+
+    {% if page_paths %}
+      <nav id="nav-menu-container" class="text-right navbar-light">
+        <input type="checkbox" id="nav-trigger" class="d-none"/>
+        <label for="nav-trigger" aria-label="Menu" class="m-2 d-inline-block d-md-none navbar-toggler-icon">
+        </label>
+
+        <div id="nav-menu" class="d-none d-md-block">
+          {% for path in page_paths %}
+            {% assign my_page = site.pages | where: "path", path | first %}
+            {% if my_page.title %}
+              <a class="ml-3 ml-md-0 p-2 d-block d-md-inline-block" href="{{ my_page.url | relative_url }}"{% if page.url == my_page.url %} aria-current="page"{% endif %}>{{ my_page.title | escape }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </nav>
+    {% endif %}
+  </div>
+</header>
+
+<div id="mcm-crisis-bar">
+  <div class="container">
+    <span class="mcm-crisis-lede">Is your child missing?</span>
+    <a href="{{ site.mcm.phone_href }}">{{ site.mcm.phone }}</a>
+    <a href="{{ site.mcm.hotline_href }}">{{ site.mcm.hotline }} ({{ site.mcm.hotline_digits }})</a>
+    <a class="mcm-crisis-guide" href="{{ "/missing-child/" | relative_url }}">What to do next</a>
+  </div>
+</div>

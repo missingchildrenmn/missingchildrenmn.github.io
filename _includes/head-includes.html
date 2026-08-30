@@ -1,0 +1,10 @@
+{%- comment -%}
+Shadows the theme's _includes/head-includes.html, which ships empty precisely as
+an extension point -- the theme's head.html includes it last, so this is the
+supported way to add to <head> without overriding head.html itself.
+
+Icons come from .claude/skills/mcm-design/assets/logo/, copied into /assets/logo/.
+{%- endcomment -%}
+<link rel="icon" href="{{ "/assets/logo/favicon.ico" | relative_url }}" sizes="any">
+<link rel="apple-touch-icon" href="{{ "/assets/logo/apple-touch-icon.png" | relative_url }}">
+<meta name="theme-color" content="#145c6c">

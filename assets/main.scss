@@ -1,0 +1,467 @@
+---
+# Empty front matter is required -- it is what makes Jekyll run this through Sass.
+---
+
+// Missing Children Minnesota -- brand layer over the aterenin/minima-reboot theme.
+//
+// This file SHADOWS the theme's own assets/main.scss (local files win over
+// remote_theme), which is nothing but `@import "minima-reboot";`. That import is
+// repeated below, so the theme's layout and syntax-highlighting rules still load;
+// everything after it is MCM.
+//
+// Every color, size and radius here comes from .claude/skills/mcm-design/tokens/.
+// Do not invent values -- read the token files, or the brand book in that skill's
+// README.md, and use what is recorded there.
+//
+// Bootstrap 4.6 is loaded from a CDN by the theme's _includes/head.html BEFORE
+// this file, so these rules win without needing !important -- except where the
+// theme itself used !important, which is called out at each site below.
+
+// Theme knobs, set before the import so its !default assignments pick them up.
+$layout-color-border: #e9ecef;
+$layout-color-background: #fdfdfd;
+$layout-responsive-nav-cutoff: 768px;
+
+@import "minima-reboot";
+
+// ---------------------------------------------------------------------------
+// Tokens
+// ---------------------------------------------------------------------------
+// Mirrors .claude/skills/mcm-design/tokens/*.css so the site and the design
+// system speak the same names. Only the subset the website actually uses --
+// the app-only tokens (cards, PIN boxes, sidebar) are deliberately absent,
+// because the brand book says the website uses no cards at all.
+
+:root {
+  --mcm-primary: #145c6c;        // headers, primary actions
+  --mcm-dark-teal-1: #084150;    // deepest teal; link hover
+  --mcm-light-blue-1: #46b6bc;   // accent
+  --mcm-green-1: #31812e;
+  --mcm-orange-1: #df8319;       // urgent / destructive
+  --mcm-yellow-4: #f6efc5;       // notes
+
+  --mcm-black-1: #212121;
+  --page-bg: #fdfdfd;
+  --text-body: #212529;
+  --text-muted: #6c757d;
+  --text-on-brand: #ffffff;
+
+  --border-subtle: #e9ecef;
+
+  // #007bff (Bootstrap's default, previously inherited) measures 3.98:1 on the
+  // #fdfdfd page and fails WCAG AA. This is the design system's --color-link,
+  // which measures 4.95:1 and passes.
+  --color-link: #0071c1;
+  --color-link-hover: #084150;
+
+  --container-max: 1140px;
+  --container-pad: 15px;
+  --nav-height: 3.5rem;
+  --space-section: 2rem;
+  --tracking-caps: .06em;
+  --radius-sm: .25rem;
+  --touch-min: 48px;
+}
+
+// ---------------------------------------------------------------------------
+// Type
+// ---------------------------------------------------------------------------
+// No webfont, deliberately -- the brand book records the site as running on the
+// system stack. The --font-display token (Jost) is app-only; do not load it here.
+
+body {
+  color: var(--text-body);
+}
+
+// Section headings: bold, FULL CAPS, letterspaced.
+//
+// This is the brand's most visible typographic rule, and it used to live in the
+// page copy -- some pages typed their headings in caps, about.markdown used title
+// case, and child-safety.markdown wrapped its headings in ** to force bold. Making
+// it a style rule means the markdown no longer has to carry it.
+//
+// h2 only. h3 and h4 get weight but not uppercase, because h3 carries program
+// names whose casing is a trademark ("Run, Yell & Tell!(R)") and must not be
+// transformed. Sub-step headings on missing-child.markdown are already authored
+// in caps, as the brand book describes.
+#content {
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caps);
+    font-weight: 700;
+  }
+
+  h3,
+  h4 {
+    font-weight: 700;
+  }
+
+  // Long-form body copy is justified on this site. The brand book flags it as a
+  // real, slightly old-fashioned trait to keep -- so it is kept, with hyphenation
+  // to stop rivers opening up, and switched off on narrow screens where a
+  // justified measure of ~40 characters does more harm than good.
+  text-align: justify;
+  hyphens: auto;
+
+  // support.markdown lists donation URLs as bare text (givemn.org, paypal.com,
+  // stockdonator.com). Those are single unbreakable tokens, and at 375px they
+  // pushed the page to 423px wide and made the whole document scroll sideways.
+  overflow-wrap: break-word;
+
+  @media (max-width: 575px) {
+    &,
+    .text-justify {
+      text-align: left !important;
+      hyphens: none;
+    }
+  }
+}
+
+a {
+  color: var(--color-link);
+
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Header
+// ---------------------------------------------------------------------------
+
+// The 5px brand rule across the top of the header. The theme declares
+// `border-top: 5px solid !important` and names no color, so the site was
+// inheriting black from Bootstrap's .border-dark. !important is required here
+// only because the theme used it first.
+#nav-header {
+  border-top-color: var(--mcm-primary) !important;
+  background-color: var(--page-bg);
+}
+
+// The design system records a 3.5rem bar, but that described a header whose
+// brand was a line of text. The MCM mark is a stacked lockup at roughly 2:1
+// ("MISSING / CHILDREN / MINNESOTA" beside the state outline), and below about
+// 50px tall the third line stops being readable. The bar is opened up to suit
+// the mark rather than shrinking the mark to suit the bar.
+#nav-container {
+  height: 5rem;
+}
+
+.mcm-brand {
+  display: flex;
+  align-items: center;
+
+  img {
+    display: block;
+    height: 3.25rem;   // 52px -> ~105px wide at the mark's 2.02:1
+    width: auto;
+  }
+}
+
+// The theme pins the collapsed nav's toggle at top: 0.4375rem, which centred it
+// in a 3.5rem bar. Re-centre it for the taller one.
+@media (max-width: 767px) {
+  #nav-menu-container {
+    top: 1.25rem;
+  }
+}
+
+// The nav toggle is a bare .navbar-toggler-icon -- a 1.5em (24px) box, well
+// under a thumb's worth. Padding grows the hit area to 44px without inflating
+// the glyph, which content-box sizing plus a content-box background origin keeps
+// at its original size.
+label[for="nav-trigger"] {
+  box-sizing: content-box;
+  padding: .625rem;
+  background-origin: content-box;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#nav-menu a {
+  color: var(--mcm-black-1);
+
+  &:hover,
+  &:focus {
+    color: var(--mcm-primary);
+    text-decoration: none;
+  }
+}
+
+// Keyboard route past the nav. Visible only when focused.
+.mcm-skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 200;
+  padding: .5rem 1rem;
+  background: var(--mcm-primary);
+  color: var(--text-on-brand);
+  border-radius: 0 0 var(--radius-sm) 0;
+
+  &:focus {
+    left: 0;
+    top: 0;
+    color: var(--text-on-brand);
+  }
+}
+
+#content-container:focus {
+  outline: none;
+}
+
+// ---------------------------------------------------------------------------
+// Crisis bar
+// ---------------------------------------------------------------------------
+// Full-bleed teal strip under the header, on every page. The brand book's rule
+// is "prefer a phone number to an adjective"; this puts both numbers one tap
+// away from anywhere on the site. White on #145c6c measures 7.56:1 (AA, and AAA
+// at large sizes). Numbers come from site.mcm in _config.yml -- never hardcode
+// them into markup.
+#mcm-crisis-bar {
+  background: var(--mcm-primary);
+  color: var(--text-on-brand);
+  font-size: .9375rem;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem 1.25rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+
+  a {
+    color: var(--text-on-brand);
+    text-decoration: underline;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      color: var(--text-on-brand);
+      // The brand's hover on teal surfaces: a translucent white wash, never a
+      // glow, never a lift.
+      background: rgba(255, 255, 255, .1);
+    }
+  }
+}
+
+.mcm-crisis-lede {
+  font-weight: 700;
+}
+
+.mcm-crisis-guide {
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  #mcm-crisis-bar .container {
+    display: block;
+  }
+
+  #mcm-crisis-bar a,
+  .mcm-crisis-lede {
+    // 48x48 minimum touch target, per the brand book's density rule.
+    display: block;
+    padding: .3125rem 0;
+    min-height: 2.25rem;
+  }
+
+  .mcm-crisis-guide {
+    margin-left: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Banners
+// ---------------------------------------------------------------------------
+// One wide letterbox photograph opens every page: edge to edge inside the
+// container, square corners, no overlay, no scrim, no text. The sources are
+// 1800x400 (4.5:1); width/height are set in the markup so nothing shifts as
+// they load.
+.mcm-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-section);
+}
+
+// ---------------------------------------------------------------------------
+// Home
+// ---------------------------------------------------------------------------
+
+#mcm-home {
+  // The home page is a set of routes and a list, not long-form prose.
+  text-align: left;
+}
+
+// The mark stands in as the home page's h1, so the heading's own margins are
+// cleared and the padding does the spacing.
+.mcm-lockup {
+  text-align: center;
+  padding: var(--space-section) 0 1rem;
+  margin: 0;
+
+  img {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.mcm-mission {
+  max-width: 44rem;
+  margin: 0 auto 1rem;
+  text-align: center;
+  font-size: 1.25rem;   // --text-lead
+  line-height: 1.5;
+  color: var(--mcm-black-1);
+}
+
+// Three routes into the site. Hairline-ruled rows, NOT cards -- the brand book
+// is explicit that the website uses no cards at all, so there is no offset teal
+// shadow and no border box here.
+.mcm-routes {
+  margin: var(--space-section) 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.mcm-route {
+  display: block;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-body);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--text-body);
+    text-decoration: none;
+    // Light surfaces deepen toward dark teal; nothing scales or lifts.
+    background: rgba(20, 92, 108, .04);
+  }
+
+  h2 {
+    margin: 0 0 .25rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caps);
+    color: var(--mcm-primary);
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+}
+
+// The urgent route reads in the brand's urgent color.
+.mcm-route--urgent h2 {
+  color: var(--mcm-orange-1);
+}
+
+// ---------------------------------------------------------------------------
+// Post lists
+// ---------------------------------------------------------------------------
+// blog.html emits .post-list / .post-meta / .post-link, which minima-reboot --
+// unlike upstream minima -- never styled, so the blog rendered as raw bullets
+// while the home page's list was styled. This makes both lists match.
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  // The blog page's list sits inside #content, which is justified for prose.
+  text-align: left;
+
+  > li {
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
+
+.post-meta {
+  color: var(--text-muted);
+  font-size: .875rem;
+}
+
+.post-link {
+  display: block;
+  margin-top: .25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.rss-subscribe {
+  margin-top: 1rem;
+}
+
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
+
+#site-footer {
+  border-top: 1px solid var(--border-subtle);
+  background: var(--page-bg);
+
+  // The teal mark, not the white knockout -- the footer stays a light surface,
+  // as the design system records it.
+  .mcm-footer-logo {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    font-size: .875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caps);
+    color: var(--text-muted);
+    margin: 0 0 .5rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: .25rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 404
+// ---------------------------------------------------------------------------
+
+.mcm-404 {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: var(--space-section) 0 3rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caps);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Motion
+// ---------------------------------------------------------------------------
+// Almost none, deliberately: this site is read in emergencies. Nothing here
+// animates; this is a guard for anything added later.
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

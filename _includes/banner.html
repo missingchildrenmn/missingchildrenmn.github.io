@@ -1,0 +1,21 @@
+{%- comment -%}
+The wide letterbox photograph that opens every page.
+
+Call as: {% include banner.html banner=page.banner %}
+
+Every banner in /assets/ is 4.5:1 and ships in two widths -- <name>.jpg at 1800px
+and <name>-900.jpg -- so the -900 path is derived rather than declared. The
+width/height attributes are the shared 1800x400 aspect ratio, not the file's real
+pixels; CSS scales the image and the browser uses them only to reserve the right
+box while it loads.
+
+alt is empty by design. The brand book: banners "carry no text, no overlay, no
+scrim" -- they are mood, not information, so they are decorative.
+{%- endcomment -%}
+{%- assign banner_900 = include.banner | replace: ".jpg", "-900.jpg" -%}
+<img class="mcm-banner"
+     src="{{ include.banner | relative_url }}"
+     srcset="{{ banner_900 | relative_url }} 900w, {{ include.banner | relative_url }} 1800w"
+     sizes="(max-width: 1140px) 100vw, 1140px"
+     width="1800" height="400"
+     alt="">

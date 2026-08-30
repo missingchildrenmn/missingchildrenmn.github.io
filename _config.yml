@@ -23,10 +23,57 @@ email: general.info@missingchildrenmn.com
 description: >- # this means to ignore newlines until "baseurl:"
   The mission of Missing Children Minnesota is to help in locating missing children; to provide advocacy and support services to families of missing children and to provide information and prevention education to the public regarding missing children and runaways.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# The live hostname (see CNAME). jekyll-seo-tag builds canonical and og:url from
+# this; leaving it blank made local builds emit http://localhost:4000 canonicals.
+url: "https://missingchildrenmn.com"
+author: Missing Children Minnesota
 twitter_username: missingchildmn
 github_username:  missingchildrenmn
 permalink: /:year/:month/:day/:title/
+
+# Nav order. The theme's _includes/header.html falls back to alphabetical page
+# order when this is unset, which buried Missing Child -- the crisis page -- in
+# fifth place. Ordered here by how urgently a visitor needs the page.
+header_pages:
+  - missing-child.markdown
+  - child-safety.markdown
+  - resources.markdown
+  - support.markdown
+  - about.markdown
+  - blog.html
+  - contact.markdown
+
+# og:image -- the card shown when a page is shared, which for this site is often
+# during a search. It has to be a Jekyll default rather than a top-level `image:`
+# key: jekyll-seo-tag's ImageDrop reads page["image"] and never falls back to
+# site["image"], so a site-level key silently does nothing. Defaults populate
+# each page's front matter, which the plugin does read.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/social-card.jpg
+
+# Contact details of record. These are safety-critical: the header bar, the
+# footer and contact.markdown all read from here so the numbers can never drift
+# apart. Copy changes only from an authoritative source -- never invent one.
+mcm:
+  phone: "612.334.9449"
+  phone_href: "tel:+16123349449"
+  hotline: "888.RUN.YELL"
+  hotline_digits: "888.786.9355"
+  hotline_href: "tel:+18887869355"
+  address_line1: "P.O. Box 1111"
+  address_line2: "Minnetonka, MN 55345"
+  social:
+    - name: Facebook
+      url: https://www.facebook.com/Missingchildrenmn
+    - name: Instagram
+      url: https://www.instagram.com/missing_children_minnesota/
+    - name: Twitter/X
+      url: https://x.com/MissingChildMN
+    - name: Mastodon
+      url: https://mstdn.social/@MissingChildMN
 
 # Build settings
 #theme: minima

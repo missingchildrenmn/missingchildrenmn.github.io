@@ -1,25 +1,32 @@
 ---
 permalink: /404.html
 layout: default
+title: Page not found
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<!--
+  This page used to carry an inline <style> block that redefined .container
+  globally, which fought Bootstrap on the one page a lost visitor lands on.
+  Styling now lives with everything else, in assets/main.scss (.mcm-404).
 
-<div class="container">
-  <h1>404</h1>
+  A 404 is a plausible way to arrive here mid-search -- a stale link from a
+  poster or a shared post -- so it routes onward instead of dead-ending.
+-->
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="mcm-404">
+  <h1>Page not found</h1>
+
+  <p>The page you asked for isn't here. It may have moved, or the link may have been mistyped.</p>
+
+  <p>
+    <a href="{{ "/missing-child/" | relative_url }}">What to do if your child is missing</a><br>
+    <a href="{{ "/resources/" | relative_url }}">Resources and phone numbers</a><br>
+    <a href="{{ "/" | relative_url }}">Missing Children Minnesota home</a>
+  </p>
+
+  <p>
+    Or call us now at
+    <a href="{{ site.mcm.phone_href }}">{{ site.mcm.phone }}</a>
+    or <a href="{{ site.mcm.hotline_href }}">{{ site.mcm.hotline }} ({{ site.mcm.hotline_digits }})</a>.
+  </p>
 </div>

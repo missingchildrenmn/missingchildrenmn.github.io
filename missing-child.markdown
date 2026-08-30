@@ -2,9 +2,8 @@
 layout: page
 title: Missing Child
 permalink: /missing-child/
+banner: /assets/missing-child-banner.jpg
 ---
-
-![](/assets/missing-child-banner.jpg)
 
 ## MISSING CHILD – WHAT TO DO NEXT?
 
@@ -27,27 +26,27 @@ If they dispatch an officer to you, stay exactly where you told the dispatcher y
 
 #### **START A LOG BOOK**
 
-Find or obtain a spiral notebook, and begin to record all details as they happen. Write down notes on who you talked to, the date and time, and the general idea of what was said in the converstaion. Make notes on tasks and who did them, as well as where flyers were distributed, and any other details.
+Find or obtain a spiral notebook, and begin to record all details as they happen. Write down notes on who you talked to, the date and time, and the general idea of what was said in the conversation. Make notes on tasks and who did them, as well as where flyers were distributed, and any other details.
 
-Being the searching parent is extremely stressful. You will appreciate having these notes to helpyou keep trak of vital contacts, tasks, and information.
+Being the searching parent is extremely stressful. You will appreciate having these notes to help you keep track of vital contacts, tasks, and information.
 
  Whenever possible, delegate note-taking duties to someone you trust to be accurate and thorough. Keep the log book near you, so that no information is missed.
 
 
 #### **FIND THE BEST, MOST RECENT PHOTOS OF YOUR CHILD**
 
-You will need to email or text copies of the photo to police, searchers and missing child agencies. Try to locate several photos, with a mix of portraits and and full-body photos. Make sure that these photos are in standard file formats such as .PNG or .JPEG so that they can be easily used by police and other search agencies.
+You will need to email or text copies of the photo to police, searchers and missing child agencies. Try to locate several photos, with a mix of portraits and full-body photos. Make sure that these photos are in standard file formats such as .PNG or .JPEG so that they can be easily used by police and other search agencies.
 
 Ideally, choose photos with no filters, and where the child’s features are easily visible and give a realistic representation of how the child appears.
 
-If your child has had a portait taken at school, Lifetouch will be able to provide Law Enforcement with a copy of your child's school portrait if you cannot locate a suitable photo.
+If your child has had a portrait taken at school, Lifetouch will be able to provide Law Enforcement with a copy of your child's school portrait if you cannot locate a suitable photo.
 
 Lifetouch – 1-877-689-4056
 
 
 #### **INVOLVE FAMILY AND FRIENDS IN THE SEARCH**
 
-During the next few hours stay in one place, where you can be easliy reached. Your first urge will be to go out and search for your child, but you need to stay in one place so that police, searchers, your child or anyone else with information can easily contact you. If you haven’t already done so, contact family members, friends and neighbors to help with the search. Record the names and contact information of all volunteers in your log book.
+During the next few hours stay in one place, where you can be easily reached. Your first urge will be to go out and search for your child, but you need to stay in one place so that police, searchers, your child or anyone else with information can easily contact you. If you haven’t already done so, contact family members, friends and neighbors to help with the search. Record the names and contact information of all volunteers in your log book.
 
 #### **CONTACT A MISSING CHILDREN’S ORGANIZATION**
 
@@ -57,7 +56,7 @@ Call Missing Children Minnesota or the missing children’s organization nearest
 
 #### **KEEP EVERYONE UP TO DATE**
 
-Over the next few days, stay in touch with police, your Missing Children Minnesota Family Supprt person, and your NCMEC Case Manager to keep everyone updated on the situation. Make sure you take notes about what is happening and what the police tell you. Don’t try to rely on your memory when you are in a crisis. Make sure that your phone is always on, and take care to maintain a full charge. Pack an extra cord and brick along with you when you go out, and consider purchasing a spare battery if you do not already have one.
+Over the next few days, stay in touch with police, your Missing Children Minnesota Family Support person, and your NCMEC Case Manager to keep everyone updated on the situation. Make sure you take notes about what is happening and what the police tell you. Don’t try to rely on your memory when you are in a crisis. Make sure that your phone is always on, and take care to maintain a full charge. Pack an extra cord and brick along with you when you go out, and consider purchasing a spare battery if you do not already have one.
 
 Allow yourself to rest fully by asking a trusted friend or family member to monitor the phone for you while you sleep, eat or rest.
 
@@ -81,7 +80,7 @@ Distribute posters and keep in touch with police and Missing Children Minnesota 
 
 Change your voice message to include the information that you accept collect calls, in case your child needs to call you collect. You may also want to leave a short personal message for your child should they call.
 
-Your family may benefit from professional support to get therough the tough times. This is an extremely stressful ordeal, and extra support such as family counciling can make a big difference for everyone involved. 
+Your family may benefit from professional support to get through the tough times. This is an extremely stressful ordeal, and extra support such as family counseling can make a big difference for everyone involved. 
 
 Make plans for when your child is found, such as contacting insurance and your county government to see what services are available to help your child when they come home. Talk to your employer about the possibility that you may have to travel suddenly if your child is located in another region of the country, or that you may need short term leave in order to help your child when they are found.
 
@@ -96,7 +95,7 @@ Be patient with yourselves and each other. This experience has changed you, but 
 
 #### **Be prepared for a missing child emergency!**
 
- Put together an ID folder for your child (such as the one available form Missing Children Minnesota). Establish a plan for your family in case you become separated at a store or an event away from home. Teach your children (and periodically review with them) how to respond to threatening situations. For more information about keeping kids safe, contact Missing Children Minnesota at (612)334-9449 or 888-RUN-YELL.
+ Put together an ID folder for your child (such as the one available from Missing Children Minnesota). Establish a plan for your family in case you become separated at a store or an event away from home. Teach your children (and periodically review with them) how to respond to threatening situations. For more information about keeping kids safe, contact Missing Children Minnesota at (612)334-9449 or 888-RUN-YELL.
 
 ### **A NOTE ABOUT PARENTAL ABDUCTION**
 
