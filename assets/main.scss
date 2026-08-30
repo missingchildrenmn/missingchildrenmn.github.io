@@ -190,6 +190,27 @@ label[for="nav-trigger"] {
   }
 }
 
+// "You are here". header.html has always set aria-current="page" on the active
+// nav link, but nothing rendered it: a screen reader announced "current page"
+// while every item looked the same to everyone else. This is its visible half.
+//
+// A rule under the label, not colour alone -- hover already deepens to teal, so
+// colour would collide with it, and WCAG 1.4.1 asks for a cue that is not colour.
+// It is an inset box-shadow rather than a border so nothing shifts by 3px when
+// the marker appears.
+#nav-menu a[aria-current="page"] {
+  color: var(--mcm-primary);
+  box-shadow: inset 0 -3px 0 var(--mcm-primary);
+
+  // In the collapsed menu the items are full-width right-aligned blocks, and a
+  // rule across the bottom of one reads as a divider between it and the next
+  // item rather than a marker on it. Move the rule to the right edge, where the
+  // text ends, so it can only be read as belonging to this item.
+  @media (max-width: 767px) {
+    box-shadow: inset -3px 0 0 var(--mcm-primary);
+  }
+}
+
 // Keyboard route past the nav. Visible only when focused.
 .mcm-skip-link {
   position: absolute;
